@@ -1,0 +1,12 @@
+﻿^ContentPage {
+    background-color: green;
+    color: white;
+   
+}
+
+.header
+{
+    font-size: large;
+    text-align: center;
+    margin-bottom: 20px;
+}
