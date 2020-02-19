@@ -8,9 +8,20 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <AbsoluteLayout>
+<!--BoxView Color="Olive"  AbsoluteLayout.LayoutBounds="300,715, 50, 50"/> -->
+           <Button Text="+" WidthRequest="70" HeightRequest="70" BorderRadius="35" AbsoluteLayout.LayoutBounds="278,700"  BackgroundColor="#7FA8A9" BorderColor="#1D155D"
+                   BorderWidth="1"
+                   FontSize="60"
+                   TextColor="#FBF4F4" FontFamily="Modak " FontAttributes="Bold" />
+            <!--(x,y,w,h)-->
+<Frame AbsoluteLayout.LayoutBounds="0,0" BackgroundColor="#9398E9" WidthRequest="400" HeightRequest="60" CascadeInputTransparent="False" CornerRadius="0" />
+<Label Text="UR" AbsoluteLayout.LayoutBounds="50,50" />
+
+
+        </AbsoluteLayout>
     </StackLayout>
+            
+
 
 </ContentPage>
