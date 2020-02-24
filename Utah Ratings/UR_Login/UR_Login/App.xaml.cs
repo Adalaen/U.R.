@@ -12,7 +12,7 @@ namespace UR_Login
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new UR_LoginPage());
+            MainPage = new NavigationPage(new WelcomePage());
         }
 
         protected override void OnStart()
