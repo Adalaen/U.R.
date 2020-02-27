@@ -1,18 +1,20 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using UR_Login.View;
+using RattingsApp.Services;
+using RattingsApp.Views;
 
-//[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-namespace UR_Login
+namespace RattingsApp
 {
     public partial class App : Application
     {
+
         public App()
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new WelcomePage());
+            DependencyService.Register<MockDataStore>();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()

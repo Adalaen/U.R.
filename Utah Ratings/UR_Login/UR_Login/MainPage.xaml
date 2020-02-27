@@ -10,6 +10,7 @@
         <!-- Place new controls here -->
         <AbsoluteLayout>
 <!--BoxView Color="Olive"  AbsoluteLayout.LayoutBounds="300,715, 50, 50"/> -->
+<Grid><Grid.ColumnDefinitions><ColumnDefinition Width="*" /></Grid.ColumnDefinitions><Grid.RowDefinitions><RowDefinition Height="*" /></Grid.RowDefinitions></Grid>
            <Button Text="+" WidthRequest="70" HeightRequest="70" BorderRadius="35" AbsoluteLayout.LayoutBounds="278,700"  BackgroundColor="#7FA8A9" BorderColor="#1D155D"
                    BorderWidth="1"
                    FontSize="60"

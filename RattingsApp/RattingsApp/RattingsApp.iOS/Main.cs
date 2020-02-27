@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace UR_Login.iOS
+namespace RattingsApp.iOS
 {
     public class Application
     {
