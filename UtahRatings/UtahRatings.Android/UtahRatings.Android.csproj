@@ -3,12 +3,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{106A4DAA-BA28-4800-A85D-CBB212AA8B1F}</ProjectGuid>
+    <ProjectGuid>{A9DAF4EA-5939-4B86-90D8-34045B122216}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TemplateGuid>{6968b3a4-1835-46a3-ac5c-1ae33b475983}</TemplateGuid>
+    <TemplateGuid>{c9e5eea5-ca05-42a1-839b-61506e0a37df}</TemplateGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>RattingsApp.Droid</RootNamespace>
-    <AssemblyName>RattingsApp.Android</AssemblyName>
+    <RootNamespace>UtahRatings.Droid</RootNamespace>
+    <AssemblyName>UtahRatings.Android</AssemblyName>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -46,10 +46,10 @@
     <Reference Include="Mono.Android" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
@@ -82,21 +82,14 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
-    <AndroidResource Include="Resources\drawable\xamarin_logo.png" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD:Utah Ratings/UR_Login/UR_Login.Android/UR_Login.Android.csproj
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UR_Login\UR_Login.csproj">
-      <Project>{67F21484-A5BC-45FC-BFB3-3AC4FFB3F507}</Project>
-      <Name>UR_Login</Name>
-=======
-    <ProjectReference Include="..\RattingsApp\RattingsApp.csproj">
-      <Project>{8D9CA231-F606-47C2-A3B8-A0B7E37CCF8E}</Project>
-      <Name>RattingsApp</Name>
->>>>>>> c70500defac3fb7feb3ae63f677f103456c3743e:RattingsApp/RattingsApp/RattingsApp.Android/RattingsApp.Android.csproj
+    <ProjectReference Include="..\UtahRatings\UtahRatings.csproj">
+      <Project>{CF8B9575-16BC-47A4-A103-DBFB7BB5B503}</Project>
+      <Name>UtahRatings</Name>
     </ProjectReference>
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
