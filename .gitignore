@@ -71,6 +71,3 @@ caketools/
 /.nuspec
 .XamarinFormsVersionFile.txt
 .idea
-Utah Ratings/UR_Login/UR_Login.iOS/UR_Login.iOS.csproj
-Utah Ratings/UR_Login/UR_Login.Android/UR_Login.Android.csproj
-Utah Ratings/UR_Login/UR_Login.Android/Properties/AndroidManifest.xml
