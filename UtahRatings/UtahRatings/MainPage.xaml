@@ -1,7 +1,22 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="UtahRatings.MainPage">
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-    </StackLayout>
-</ContentPage>
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:UtahRatings"
+             x:Class="UtahRatings.MainPage">
+
+    <!-- First Page: Home tab-->
+    <ContentPage Title="Home" Icon="homeLogo.png">
+        <ContentPage.Content>
+
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                <Label Text="Utah Ratings Home Page"/>
+            </StackLayout>
+
+        </ContentPage.Content>
+    </ContentPage>
+
+    <!-- Second Page: Personal/Profile tab-->
+    <!--<local:Profile_Page />-->
+    <local:Profile_Page/>
+
+</TabbedPage>
