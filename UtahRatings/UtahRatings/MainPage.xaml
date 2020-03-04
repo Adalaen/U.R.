@@ -40,7 +40,6 @@
     </ContentPage>
 
     <!-- Second Page: Personal/Profile tab-->
-    <!--<local:Profile_Page />-->
     <local:Profile_Page/>
 
 </TabbedPage>
