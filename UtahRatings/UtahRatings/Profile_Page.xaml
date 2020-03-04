@@ -24,10 +24,9 @@
 <AbsoluteLayout>
 
     <Label Text="Followers"
-                   TextColor="Purple"
+                 TextColor="Purple"
+                 AbsoluteLayout.LayoutBounds="115,150,100,100"
                    />
-
-
 </AbsoluteLayout>
             
             <ListView x:Name="Personal_List_View"
