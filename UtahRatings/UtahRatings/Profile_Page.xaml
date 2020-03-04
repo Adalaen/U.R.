@@ -17,6 +17,11 @@
 
             </Image>
 
+            <BoxView WidthRequest="100"
+                     HeightRequest="90"
+                     AbsoluteLayout.LayoutBounds="1, 1, 1,1"
+                     Margin="1, 1, 1, 1" Color="Black"/>
+
             <ListView x:Name="Personal_List_View"
                       ItemsSource="{Binding My_List}"
                       Margin="0, 200, 0, 0"
@@ -31,6 +36,8 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+
+            
 
 
         </StackLayout>            
