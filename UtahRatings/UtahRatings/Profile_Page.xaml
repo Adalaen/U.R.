@@ -17,15 +17,26 @@
 
             </Image>
 
-            <BoxView WidthRequest="100"
+
+            <!-- Followers display-->
+
+            <!--<BoxView WidthRequest="100"
                      HeightRequest="90"
                      AbsoluteLayout.LayoutBounds="1, 1, 1,1"
-                     Margin="1, 1, 1, 1" Color="Black"/>
+                     Margin="1, 1, 1, 1" Color="Black"/>-->
 <AbsoluteLayout>
 
+    <BoxView WidthRequest="100"
+                     HeightRequest="90"
+                     AbsoluteLayout.LayoutBounds="1, 1, 412,100"
+                     Color="Black"/>
     <Label Text="Followers"
-                 TextColor="Purple"
-                 AbsoluteLayout.LayoutBounds="115,150,100,100"
+                 TextColor="White"
+                 AbsoluteLayout.LayoutBounds="100,19,75,50"
+                   />
+    <Label Text="Following"
+                 TextColor="White"
+                 AbsoluteLayout.LayoutBounds="250,19,75,50"
                    />
 </AbsoluteLayout>
             
