@@ -7,13 +7,13 @@ namespace UtahRatings
 {
     public partial class Profile_Page : ContentPage
     {
-        public ObservableCollection<MyList_Model> My_List { get; set; }
+        public ObservableCollection<MyList_Model> MyList { get; set; }
 
         public Profile_Page()
         {
             InitializeComponent();
 
-            My_List = new ObservableCollection<MyList_Model>
+            MyList = new ObservableCollection<MyList_Model>
             {
                 new MyList_Model
                 {
@@ -33,7 +33,7 @@ namespace UtahRatings
                     //Image = "entertainmentCategory.png",
                 }
             };
-            //Personal_List_View.ItemsSource = My_List;
+            //Profile_List_View.ItemsSource = MyList;
         }
     }
 }
