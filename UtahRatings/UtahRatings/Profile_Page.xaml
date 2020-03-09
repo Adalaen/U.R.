@@ -2,10 +2,11 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
-    x:Class="UtahRatings.Profile_Page" Title="Profile" Icon="profilePic.png">
-
+    x:Class="UtahRatings.Profile_Page" Title="Profile" Icon="profilePic.png"
+   >
     <ContentPage.Content>
+
+        <ScrollView HeightRequest="3000">
 
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
 
@@ -39,25 +40,70 @@
                  AbsoluteLayout.LayoutBounds="250,19,75,50"
                    />
 </AbsoluteLayout>
-            
-            <ListView x:Name="Personal_List_View"
-                      ItemsSource="{Binding My_List}"
+
+            <!--<BoxView WidthRequest="500"
+                     HeightRequest="150"
+                     Color="Beige">
+            </BoxView>
+
+            <BoxView WidthRequest="500"
+                     HeightRequest="150"
+                     Color="Blue">
+            </BoxView>
+
+            <BoxView WidthRequest="500"
+                     HeightRequest="150"
+                     Color="Red">
+            </BoxView>
+
+            <BoxView WidthRequest="500"
+                     HeightRequest="150"
+                     Color="Green">
+            </BoxView>-->  
+
+            <ListView x:Name="Profile_List_View"
+                      ItemsSource="{Binding MyList}"
+                      
                       Margin="0, 200, 0, 0"
                       >
+                <!--ItemTapped="MyList_OnItemTapped"-->
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Label Text="{Binding Name}"
-                                   Margin="20, 20, 0, 0"/>
+           
+                             <Grid Padding="1" RowSpacing="10" ColumnSpacing="20">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="10"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image
+                                    HeightRequest="30"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    Aspect="AspectFill"
+                                    WidthRequest="30"
+                                    Grid.RowSpan="2"
+                                    Source="{Binding Image}"/>
+
+                                <Label Grid.Column="1"
+                                       Text="{Binding CategoryName}"
+                                       VerticalOptions="End"/>
+                            </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
 
+        </StackLayout>
+                </ScrollView>
             
-
-
-        </StackLayout>            
     </ContentPage.Content>
 </ContentPage>
