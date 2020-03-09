@@ -62,8 +62,8 @@
                      Color="Green">
             </BoxView>-->  
 
-            <ListView x:Name="Personal_List_View"
-                      ItemsSource="{Binding My_List}"
+            <ListView x:Name="Profile_List_View"
+                      ItemsSource="{Binding MyList}"
                       Margin="0, 200, 0, 0"
                       >
 
