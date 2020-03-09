@@ -150,7 +150,5 @@
   <ItemGroup>
     <BundleResource Include="Resources\profilePic.png" />
     <BundleResource Include="Resources\homeLogo.png" />
-    <BundleResource Include="Resources\Dracarys.png" />
-    <BundleResource Include="Resources\Tarantino.png" />
   </ItemGroup>
 </Project>
