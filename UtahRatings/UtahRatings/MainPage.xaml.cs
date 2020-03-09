@@ -15,7 +15,7 @@ namespace UtahRatings
     {
         public MainPage()
         {
-            InitializeComponent();
+                InitializeComponent();
         }
     }
 }
