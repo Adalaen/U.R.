@@ -75,6 +75,48 @@
             </ListView.ItemsSource>
         </ListView>
 
+            <ListView x:Name="Profile_List_View"
+                      ItemsSource="{Binding MyList}"
+                      
+                      Margin="0, 200, 0, 0"
+                      >
+                <!--ItemTapped="MyList_OnItemTapped"-->
+
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+           
+                             <Grid Padding="1" RowSpacing="10" ColumnSpacing="20">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="10"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image
+                                    HeightRequest="30"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    Aspect="AspectFill"
+                                    WidthRequest="30"
+                                    Grid.RowSpan="2"
+                                    Source="{Binding Image}"/>
+
+                                <Label Grid.Column="1"
+                                       Text="{Binding CategoryName}"
+                                       VerticalOptions="End"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
         </StackLayout>
                 </ScrollView>
             
