@@ -75,15 +75,17 @@
             </ListView.ItemsSource>
         </ListView>
 
-            <ListView x:Name="Profile_List_View"
-                      ItemsSource="{Binding MyList}"
+            <ListView >
+                <!--x:Name="Profile_List_View"-->
+                      <!--ItemsSource="{Binding MyList}"
                       
                       Margin="0, 200, 0, 0"
-                      >
+                      >-->
                 <!--ItemTapped="MyList_OnItemTapped"-->
 
 
                 <ListView.ItemTemplate>
+
                     <DataTemplate>
                         <ViewCell>
            
