@@ -59,8 +59,13 @@
             <BoxView WidthRequest="500"
                      HeightRequest="150"
                      Color="Green">
-            </BoxView>-->  
+            </BoxView>-->
 
+          <Button x:Name="AddList" Text="Add list"
+                  HorizontalOptions="CenterAndExpand"
+                  Clicked="AddList_Clicked">
+
+          </Button>
             <ListView>
             <ListView.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
@@ -69,9 +74,15 @@
                   <x:String>My third list</x:String>
                   <x:String>My fourth list</x:String>
                   <x:String>My fifth list</x:String>
+
+
                   
                 </x:Array>
+
+
             </ListView.ItemsSource>
+
+
         </ListView>
 
             <ListView >
