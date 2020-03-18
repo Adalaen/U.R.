@@ -59,31 +59,43 @@
             <BoxView WidthRequest="500"
                      HeightRequest="150"
                      Color="Green">
-            </BoxView>-->  
+            </BoxView>-->
 
+          <Button x:Name="AddList" Text="Add list"
+                  HorizontalOptions="CenterAndExpand"
+                  Clicked="AddList_Clicked">
+
+          </Button>
             <ListView>
             <ListView.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
-                  <x:String>Baboon</x:String>
-                  <x:String>Capuchin Monkey</x:String>
-                  <x:String>Blue Monkey</x:String>
-                  <x:String>Squirrel Monkey</x:String>
-                  <x:String>Golden Lion Tamarin</x:String>
-                  <x:String>Howler Monkey</x:String>
-                  <x:String>Japanese Macaque</x:String>
+                  <x:String>My first list</x:String>
+                  <x:String>My second list</x:String>
+                  <x:String>My third list</x:String>
+                  <x:String>My fourth list</x:String>
+                  <x:String>My fifth list</x:String>
+
+
+                  
                 </x:Array>
+
+
             </ListView.ItemsSource>
+
+
         </ListView>
 
-            <ListView x:Name="Profile_List_View"
-                      ItemsSource="{Binding MyList}"
+            <ListView >
+                <!--x:Name="Profile_List_View"-->
+                      <!--ItemsSource="{Binding MyList}"
                       
                       Margin="0, 200, 0, 0"
-                      >
+                      >-->
                 <!--ItemTapped="MyList_OnItemTapped"-->
 
 
                 <ListView.ItemTemplate>
+
                     <DataTemplate>
                         <ViewCell>
            

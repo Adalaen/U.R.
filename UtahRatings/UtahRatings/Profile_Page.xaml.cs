@@ -13,6 +13,7 @@ namespace UtahRatings
         {
             InitializeComponent();
 
+
             MyList = new ObservableCollection<MyList_Model>
             {
                 new MyList_Model
@@ -35,5 +36,18 @@ namespace UtahRatings
             };
             //Profile_List_View.ItemsSource = MyList;
         }
+
+        /*private static async void AddList_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new CreateList());
+        }*/
+
+        void AddList_Clicked(object sender, EventArgs e)
+        {
+            this.Navigation.PushModalAsync(new CreateList());
+        }
+
     }
+
+    
 }
