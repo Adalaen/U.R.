@@ -17,5 +17,13 @@ namespace UtahRatings
         {
                 InitializeComponent();
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            CVMovies.ItemsSource = new MovieService().GetMoviesList();
+            CVTVShows.ItemsSource = new TVShowService().GetTVShowsList();
+            CVBooks.ItemsSource = new BookService().GetBooksList();
+
+        }
     }
 }

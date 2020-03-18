@@ -7,13 +7,13 @@
     <!-- First Page: Home tab-->
     <ContentPage Title="Home" Icon="homeLogo.png">
         <ContentPage.Content>
-
+                
             
-                <Grid>
-                    <Grid.RowDefinitions>
+                <!--<Grid>
+                    <Grid.RowDefinitions>-->
                          
                         
-                        <RowDefinition Height="1*" />
+                        <!--<RowDefinition Height="1*" />
                         
                         <RowDefinition Height="0*" />
                   
@@ -87,9 +87,79 @@
 
 
 
+            </Grid>-->
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height ="1*" />
+                    <RowDefinition Height ="5*" />
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height ="5*" />
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height ="5*" />
+                </Grid.RowDefinitions>
+                <Label Text="Recommended" FontSize="15"   Grid.Row="0" />
+                <CarouselView x:Name="CVMovies" Grid.Row="1"  PeekAreaInsets="90">
+                    <CarouselView.ItemTemplate>
+                        
+                        <DataTemplate>
+                            
+                                <StackLayout >
+                                
+                                <Image Source="{Binding ImageUrl}"
+                                       
+                                       />
+
+                                <!--<Label Text="{Binding Title}" FontSize="Title"
+                                       HorizontalTextAlignment="Center"/>
+                                    <Label Text="{Binding Cast}" FontSize="Title"
+                                    HorizontalTextAlignment="Center"/>-->
+                                    
+                                </StackLayout>
+                            
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+                <Label Text="Romantic" FontSize="15"   Grid.Row="2" />
+                <CarouselView x:Name="CVTVShows" Grid.Row="3"  PeekAreaInsets="90">
+                    <CarouselView.ItemTemplate>
+
+                        <DataTemplate>
+
+                            <StackLayout >
+
+                                <Image Source="{Binding ImageUrl}"
+                                       
+                                       />
+                                <Label Text="{Binding Cast}" FontSize="Title"
+                                    HorizontalTextAlignment="Center"/>
+
+                            </StackLayout>
+
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+                <Label Text="Sites" FontSize="15"   Grid.Row="4" />
+                <CarouselView x:Name="CVBooks" Grid.Row="5"  PeekAreaInsets="90">
+                    <CarouselView.ItemTemplate>
+
+                        <DataTemplate>
+
+                            <StackLayout >
+
+                                <Image Source="{Binding ImageUrl}"
+                                       
+                                       />
+
+                            </StackLayout>
+
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+
             </Grid>
-               
-            
+
+
 
         </ContentPage.Content>
     </ContentPage>
