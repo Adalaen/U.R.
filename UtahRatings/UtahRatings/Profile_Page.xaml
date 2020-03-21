@@ -10,21 +10,10 @@
 
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
 
-            <!--<controls:CircleImage Source="profilePic.png" WidthRequest="100" HeightRequest="100" Aspect="AspectFill" Margin="0,-250,0,200">
-
-            </controls:CircleImage>-->
-
             <Image Source="profilePic.png" WidthRequest="100" HeightRequest="100" Margin="0, 50, 0, 0">
 
             </Image>
 
-
-            <!-- Followers display-->
-
-            <!--<BoxView WidthRequest="100"
-                     HeightRequest="90"
-                     AbsoluteLayout.LayoutBounds="1, 1, 1,1"
-                     Margin="1, 1, 1, 1" Color="Black"/>-->
 <AbsoluteLayout>
 
     <BoxView WidthRequest="100"
@@ -41,32 +30,14 @@
                    />
 </AbsoluteLayout>
 
-            <!--<BoxView WidthRequest="500"
-                     HeightRequest="150"
-                     Color="Beige">
-            </BoxView>
-
-            <BoxView WidthRequest="500"
-                     HeightRequest="150"
-                     Color="Blue">
-            </BoxView>
-
-            <BoxView WidthRequest="500"
-                     HeightRequest="150"
-                     Color="Red">
-            </BoxView>
-
-            <BoxView WidthRequest="500"
-                     HeightRequest="150"
-                     Color="Green">
-            </BoxView>-->
-
           <Button x:Name="AddList" Text="Add list"
                   HorizontalOptions="CenterAndExpand"
                   Clicked="AddList_Clicked">
 
           </Button>
-            <ListView>
+
+
+            <!--<ListView>
             <ListView.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                   <x:String>My first list</x:String>
@@ -74,26 +45,42 @@
                   <x:String>My third list</x:String>
                   <x:String>My fourth list</x:String>
                   <x:String>My fifth list</x:String>
-
-
-                  
                 </x:Array>
-
-
             </ListView.ItemsSource>
+        </ListView>-->
+
+            <CollectionView ItemsSource="{Binding MyList_Models}">
+                <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.RowSpan="2" 
+                               Source="{Binding ImageUrl}" 
+                               Aspect="AspectFill"
+                               HeightRequest="60" 
+                               WidthRequest="60" />
+                        <Label Grid.Column="1" 
+                               Text="{Binding Name}" 
+                               FontAttributes="Bold" />
+                        <Label Grid.Row="1"
+                               Grid.Column="1" 
+                               Text="{Binding Location}"
+                               FontAttributes="Italic" 
+                               VerticalOptions="End" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            </CollectionView>
 
 
-        </ListView>
-
-            <ListView >
-                <!--x:Name="Profile_List_View"-->
-                      <!--ItemsSource="{Binding MyList}"
-                      
-                      Margin="0, 200, 0, 0"
-                      >-->
-                <!--ItemTapped="MyList_OnItemTapped"-->
-
-
+            <!--<ListView >
                 <ListView.ItemTemplate>
 
                     <DataTemplate>
@@ -122,12 +109,18 @@
 
                                 <Label Grid.Column="1"
                                        Text="{Binding Name}"
+                                       FontAttributes="Bold"/>
+
+                                 <Label Grid.Row="1"
+                                        Grid.Column="1"
+                                       Text="{Binding Location}"
+                                       FontAttributes="Italic"
                                        VerticalOptions="End"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </ListView>-->
 
         </StackLayout>
                 </ScrollView>
