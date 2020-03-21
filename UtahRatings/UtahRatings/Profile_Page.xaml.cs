@@ -18,20 +18,20 @@ namespace UtahRatings
             {
                 new MyList_Model
                 {
-                    CategoryName = "Hikes",
-                    //Image = "HikeCategory.png",
+                    Name = "Hikes",
+                    //ImageUrl = "HikeCategory.png",
                 },
 
                 new MyList_Model
                 {
-                    CategoryName = "Restaurants",
-                    //Image = "restaurantCategory.png",
+                    Name = "Restaurants",
+                    //ImageUrl = "restaurantCategory.png",
                 },
 
                 new MyList_Model
                 {
-                    CategoryName = "Entertainment",
-                    //Image = "entertainmentCategory.png",
+                    Name = "Entertainment",
+                    //Imageurl = "entertainmentCategory.png",
                 }
             };
             //Profile_List_View.ItemsSource = MyList;

@@ -118,10 +118,10 @@
                                     Aspect="AspectFill"
                                     WidthRequest="30"
                                     Grid.RowSpan="2"
-                                    Source="{Binding Image}"/>
+                                    Source="{Binding ImageUrl}"/>
 
                                 <Label Grid.Column="1"
-                                       Text="{Binding CategoryName}"
+                                       Text="{Binding Name}"
                                        VerticalOptions="End"/>
                             </Grid>
                         </ViewCell>
