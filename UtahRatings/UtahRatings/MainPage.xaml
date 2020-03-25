@@ -167,4 +167,7 @@
     <!-- Second Page: Personal/Profile tab-->
     <local:Profile_Page/>
 
+    <!-- TEST Page-->
+    <local:ListPage/>
+
 </TabbedPage>

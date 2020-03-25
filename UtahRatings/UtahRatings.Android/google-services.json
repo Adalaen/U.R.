@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "575222872714",
+    "firebase_url": "https://utahratings.firebaseio.com",
+    "project_id": "utahratings",
+    "storage_bucket": "utahratings.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:575222872714:android:cef1577425751546744b73",
+        "android_client_info": {
+          "package_name": "com.companyname.utahratings"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "575222872714-lt4l7vplt253titd7iqgma3an039emum.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCQk_PIMYUACOWvKoADt1xLVbFB9tbZPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "575222872714-lt4l7vplt253titd7iqgma3an039emum.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "575222872714-noi3dbd98c8b0bccvi7j1bml3b08lv11.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.companyname.UtahRatings"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
