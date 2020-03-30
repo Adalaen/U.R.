@@ -15,51 +15,104 @@ namespace UtahRatings
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            var allPersons = await firebaseHelper.GetAllPersons();
-            lstPersons.ItemsSource = allPersons;
+            UpdateScreenList();
         }
 
         private async void BtnAdd_Clicked(object sender, EventArgs e)
         {
-            await firebaseHelper.AddPerson(Convert.ToInt32(txtId.Text), txtName.Text);
-            txtId.Text = string.Empty;
-            txtName.Text = string.Empty;
-            await DisplayAlert("Success", "Person Added Successfully", "OK");
-            var allPersons = await firebaseHelper.GetAllPersons();
-            lstPersons.ItemsSource = allPersons;
+            int id;
+            bool success = int.TryParse(txtId.Text, out id);
+            if (success)
+            {
+                await firebaseHelper.AddList(
+                    Convert.ToInt32(txtId.Text),
+                    txtName.Text,
+                    txtDescription.Text);
+                await DisplayAlert("Success", "List Added Successfully", "OK");
+            }
+            else
+            {
+                await DisplayAlert("Error", "ID Must Be a Int", "OK");
+            }
         }
 
         private async void BtnRetrive_Clicked(object sender, EventArgs e)
         {
-            var person = await firebaseHelper.GetPerson(Convert.ToInt32(txtId.Text));
-            if (person != null)
+            int id;
+            bool success = int.TryParse(txtId.Text, out id);
+            if (success)
             {
-                txtId.Text = person.PersonId.ToString();
-                txtName.Text = person.Name;
-                await DisplayAlert("Success", "Person Retrive Successfully", "OK");
+                var list = await firebaseHelper.GetList(Convert.ToInt32(txtId.Text));
+                if (list != null)
+                {
+                    txtId.Text = list.ListId.ToString();
+                    txtName.Text = list.Name;
+                    txtDescription.Text = list.Description;
+                    await DisplayAlert("Success", "List Retrive Successfully", "OK");
+                }
+                else
+                {
+                    await DisplayAlert("Error", "No List With That ID Found", "OK");
+                }
             }
             else
             {
-                await DisplayAlert("Success", "No Person Available", "OK");
+                await DisplayAlert("Error", "ID Must Be a Int", "OK");
             }
         }
 
         private async void BtnUpdate_Clicked(object sender, EventArgs e)
         {
-            await firebaseHelper.UpdatePerson(Convert.ToInt32(txtId.Text), txtName.Text);
-            txtId.Text = string.Empty;
-            txtName.Text = string.Empty;
-            await DisplayAlert("Success", "Person Updated Successfully", "OK");
-            var allPersons = await firebaseHelper.GetAllPersons();
-            lstPersons.ItemsSource = allPersons;
+            int id;
+            bool success = int.TryParse(txtId.Text, out id);
+            if (success)
+            {
+                var list = await firebaseHelper.GetList(Convert.ToInt32(txtId.Text));
+                if (list != null)
+                {
+                    await firebaseHelper.UpdateList(
+                        Convert.ToInt32(txtId.Text),
+                        txtName.Text,
+                        txtDescription.Text);
+                    await DisplayAlert("Success", "List Updated Successfully", "OK");
+                }
+                else
+                {
+                    await DisplayAlert("Error", "No List With That ID Found", "OK");
+                }
+            }
+            else
+            {
+                await DisplayAlert("Error", "ID Must Be a Int", "OK");
+            }
         }
 
         private async void BtnDelete_Clicked(object sender, EventArgs e)
         {
-            await firebaseHelper.DeletePerson(Convert.ToInt32(txtId.Text));
-            await DisplayAlert("Success", "Person Deleted Successfully", "OK");
-            var allPersons = await firebaseHelper.GetAllPersons();
-            lstPersons.ItemsSource = allPersons;
+            int id;
+            bool success = int.TryParse(txtId.Text, out id);
+            if (success)
+            {
+                var list = await firebaseHelper.GetList(Convert.ToInt32(txtId.Text));
+                if (list != null)
+                {
+                    await firebaseHelper.DeleteList(Convert.ToInt32(txtId.Text));
+                    await DisplayAlert("Success", "List Deleted Successfully", "OK");
+                }
+                else
+                {
+                    await DisplayAlert("Error", "No List With That ID Found", "OK");
+                }
+            }
+            else
+            {
+                await DisplayAlert("Error", "ID Must Be a Int", "OK");
+            }
+        }
+
+        private void UpdateScreenList()
+        {
+
         }
     }
 }

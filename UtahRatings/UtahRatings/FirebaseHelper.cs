@@ -11,52 +11,56 @@ namespace UtahRatings
     {
         FirebaseClient firebase = new FirebaseClient("https://utahratings.firebaseio.com/");
 
-        public async Task<List<Person>> GetAllPersons()
+        public async Task<List<ListData>> GetAllLists()
         {
             return (await firebase
-              .Child("Persons")
-              .OnceAsync<Person>()).Select(item => new Person
+              .Child("Lists")
+              .OnceAsync<ListData>()).Select(item => new ListData
               {
+                  ListId = item.Object.ListId,
                   Name = item.Object.Name,
-                  PersonId = item.Object.PersonId
+                  Description = item.Object.Description
               }).ToList();
         }
-
-        public async Task AddPerson(int personId, string name)
+        public async Task AddList(int listId, string name, string description)
         {
             await firebase
-              .Child("Persons")
-              .PostAsync(new Person() { PersonId = personId, Name = name });
+              .Child("Lists")
+              .PostAsync(new ListData() { 
+                  ListId = listId, 
+                  Name = name, 
+                  Description = description 
+              });
         }
-
-        public async Task<Person> GetPerson(int personId)
+        public async Task<ListData> GetList(int listId)
         {
-            var allPersons = await GetAllPersons();
+            var allLists = await GetAllLists();
             await firebase
-              .Child("Persons")
-              .OnceAsync<Person>();
-            return allPersons.Where(a => a.PersonId == personId).FirstOrDefault();
+              .Child("Lists")
+              .OnceAsync<ListData>();
+            return allLists.Where(a => a.ListId == listId).FirstOrDefault();
         }
-
-        public async Task UpdatePerson(int personId, string name)
+        public async Task UpdateList(int listId, string name, string description)
         {
-            var toUpdatePerson = (await firebase
-              .Child("Persons")
-              .OnceAsync<Person>()).Where(a => a.Object.PersonId == personId).FirstOrDefault();
+            var toUpdateList = (await firebase
+              .Child("Lists")
+              .OnceAsync<ListData>()).Where(a => a.Object.ListId == listId).FirstOrDefault();
 
             await firebase
-              .Child("Persons")
-              .Child(toUpdatePerson.Key)
-              .PutAsync(new Person() { PersonId = personId, Name = name });
+              .Child("Lists")
+              .Child(toUpdateList.Key)
+              .PutAsync(new ListData() {
+                  ListId = listId,
+                  Name = name,
+                  Description = description
+              });
         }
-
-        public async Task DeletePerson(int personId)
+        public async Task DeleteList(int listId)
         {
-            var toDeletePerson = (await firebase
-              .Child("Persons")
-              .OnceAsync<Person>()).Where(a => a.Object.PersonId == personId).FirstOrDefault();
-            await firebase.Child("Persons").Child(toDeletePerson.Key).DeleteAsync();
-
+            var toDeleteList = (await firebase
+              .Child("Lists")
+              .OnceAsync<ListData>()).Where(a => a.Object.ListId == listId).FirstOrDefault();
+            await firebase.Child("Lists").Child(toDeleteList.Key).DeleteAsync();
         }
     }
 }
